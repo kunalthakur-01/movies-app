@@ -11,26 +11,26 @@ const search_movie = document.querySelector('.search_movie');
 api_url.then(response => response.json())
     .then(data => {
     renderMovie(data);
-})
+});
 
 
 
-
+// input from user
 search_movie.addEventListener('submit', e => {
     e.preventDefault();
 
-    // cl
+    // clear the container
     allCards.innerHTML = '';
 
+    // fetch the TMDB API
     fetchAPI(e.target[0].value);
 
-    // setTimeout(() => {
-    //     allCards.style.opacity = '1';
-    // }, 1000);
     e.target[0].value = '';
 })
 
 
+
+// render the movies in the container
 const renderMovie = (collection) => {
 
     collection.results.map( data => {
@@ -56,12 +56,12 @@ const renderMovie = (collection) => {
 
 }
 
+// function for fetch API
 const fetchAPI = (movie) => {
     const api = fetch(`https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query=${movie}`);
 
     api.then(response => response.json())
         .then(data => {
-        console.log(data);
         renderMovie(data);
     })
 }
