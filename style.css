@@ -136,7 +136,7 @@ nav input:focus {
     color: black;
     padding: 2rem;
     transform: translateY(101%);
-    transition: transform 0.5s ease-in;
+    transition: transform 0.3s ease-in;
     z-index: 10;
 }
 
