@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    /* height: 300vh; */
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    background-color: var(--primary-color);
+}
+
+:root {
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+
+nav {
+    width: 100%;
+    padding: 18px 3%;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+nav input {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    outline: none;
+    font-size: 17px;
+    color: white;
+    padding: 11px 13px;
+    border-radius: 30px;
+}
+
+nav input::placeholder {
+    color: #5c62a7;
+}
+
+nav input:focus {
+    background-color: #232553;
+}
+
+.movie-container {
+    width: 100%;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    /* padding: 2rem 3%; */
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    grid-gap: 0.9rem; */
+}
+
+.cards {
+    width: 100%;
+    /* height: 90vh; */
+    margin: auto;
+    padding: 0 3%;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    /* min-width: 18rem; */
+    /* height: 30rem; */
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px 0px rgb(0 0 0 / 20%);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info {
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 2rem;
+    letter-spacing: 0.5px;
+    margin-right: 5px;
+}
+
+.info h3 {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+.rating {
+    background-color: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.orange {
+    color: orange;
+}
+
+.green {
+    color: green;
+}
+
+.overview {
+    width: 100%;
+    /* height: 0; */
+    max-height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: black;
+    padding: 2rem;
+    transform: translateY(101%);
+    transition: transform 0.5s ease-in;
+    z-index: 10;
+}
+
+.overview h2 {
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.overview p {
+    /* display: none; */
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5rem;
+}
+
+.card:hover .overview {
+    /* height: 100%; */
+    transform: translateY(0);
+}
