@@ -69,6 +69,8 @@ nav input:focus {
     display: flex;
     /* justify-content: space-between; */
     flex-wrap: wrap;
+    /* opacity: 0;
+    transition: opacity 0.7s; */
 }
 
 .card {
@@ -121,7 +123,7 @@ nav input:focus {
 }
 
 .green {
-    color: green;
+    color: rgb(0, 252, 0);
 }
 
 .overview {
