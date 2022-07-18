@@ -130,6 +130,7 @@ nav input:focus {
 
 .cards {
     width: 100%;
+    /* position: relative; */
     /* height: 90vh; */
     margin: auto;
     padding: 0 3%;
@@ -224,4 +225,15 @@ nav input:focus {
 .card:hover .overview {
     /* height: 100%; */
     transform: translateY(0);
+}
+
+.error-section {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20rem;
+}
+
+.error-section h2 {
+    color: white;
 }

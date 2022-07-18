@@ -14,6 +14,18 @@ api_url.then(response => response.json())
 });
 
 
+// handles the error if any
+const errorHandling = (mess) => {
+    let error = 
+    `
+    <div class="error-section">
+        <h2>${mess}</h2>
+    </div>
+    `;
+
+    allCards.insertAdjacentHTML('beforeend', error);
+}
+
 
 // input from user
 search_movie.addEventListener('submit', e => {
@@ -40,7 +52,7 @@ const renderMovie = (collection) => {
                 <img src="${IMG_PATH + data.poster_path}" alt="${data.title}">
              </a>
             <div class="info">
-                <h3>${data.name}</h3>
+                <h3>${data.title}</h3>
                 <span class="rating ${data.vote_average.toFixed(1) >= 8.0 ? 'green' : 'orange'}">${data.vote_average.toFixed(1)}</span>
             </div>
             <div class="overview">
@@ -60,8 +72,20 @@ const renderMovie = (collection) => {
 const fetchAPI = (movie) => {
     const api = fetch(`https://api.themoviedb.org/3/search/tv?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query=${movie}`);
 
-    api.then(response => response.json())
-        .then(data => {
+    api.then(response => {
+
+        if(!response.ok) throw Error('Something Went Wrong⚠️⚠️');
+        
+        return response.json()
+    })
+    .then(data => {
+
+        if(data.total_pages === 0) throw Error('Result not found(404)') 
+
         renderMovie(data);
+    })
+    .catch(err => {
+        console.error(err);
+        errorHandling(err);
     })
 }
