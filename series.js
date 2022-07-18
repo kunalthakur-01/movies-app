@@ -5,6 +5,26 @@ const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 const movieContainer = document.querySelector('.movie-container');
 const allCards = document.querySelector('.cards');
 const search_movie = document.querySelector('.search_movie');
+const theme_selector = document.querySelector('#theme-selector');
+
+
+// implementing dark and light theme
+theme_selector.addEventListener('click', (e) => {
+    console.log(e.target.innerText);
+    if(e.target.innerText === 'Dark') {
+        document.body.classList.add('dark');
+        document.body.classList.remove('light');
+    }
+    else if(e.target.innerText === 'Light') {
+        document.body.classList.add('light');
+        document.body.classList.remove('dark');
+    }
+    else if(e.target.innerText === 'Default') {
+        document.body.classList.remove('light');
+        document.body.classList.remove('dark');
+    }
+});
+
 
 
 
