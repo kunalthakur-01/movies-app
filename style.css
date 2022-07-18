@@ -30,7 +30,63 @@ nav {
     top: 0;
     left: 0;
     z-index: 2;
+    color: white;
 }
+
+nav h2 {
+    cursor: pointer;
+    font-family:'Times New Roman', Times, serif;
+}
+
+nav h2 a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-family:'Times New Roman', Times, serif;
+}
+
+nav h2 span {
+    color: orange;
+}
+
+nav ul {
+    flex: 1;
+    margin-left: 5rem;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li a{
+    padding: 10px 15px;
+    font-size: 17.8px;
+    transition: 0.6s;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a:hover {
+    background-color: var(--primary-color);
+}
+
+nav ul ul {
+    position: absolute;
+    /* left: 0; */
+    /* top: 10px; */
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+nav ul ul li  {
+    display: block;
+    /* padding: 1rem; */
+}
+
+
 
 nav input {
     background-color: transparent;

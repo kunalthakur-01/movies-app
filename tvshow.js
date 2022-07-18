@@ -1,5 +1,5 @@
 
-const api_url = fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=11');
+const api_url = fetch('https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=11');
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 
 const movieContainer = document.querySelector('.movie-container');
@@ -40,7 +40,7 @@ const renderMovie = (collection) => {
                 <img src="${IMG_PATH + data.poster_path}" alt="${data.title}">
              </a>
             <div class="info">
-                <h3>${data.title}</h3>
+                <h3>${data.name}</h3>
                 <span class="rating ${data.vote_average.toFixed(1) >= 8.0 ? 'green' : 'orange'}">${data.vote_average.toFixed(1)}</span>
             </div>
             <div class="overview">
@@ -58,7 +58,7 @@ const renderMovie = (collection) => {
 
 // function for fetch API
 const fetchAPI = (movie) => {
-    const api = fetch(`https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query=${movie}`);
+    const api = fetch(`https://api.themoviedb.org/3/search/tv?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query=${movie}`);
 
     api.then(response => response.json())
         .then(data => {
