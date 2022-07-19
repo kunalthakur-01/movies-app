@@ -6,11 +6,29 @@ const movieContainer = document.querySelector('.movie-container');
 const allCards = document.querySelector('.cards');
 const search_movie = document.querySelector('.search_movie');
 const theme_selector = document.querySelector('#theme-selector');
+const menu = document.querySelector('.menu');
+const close = document.querySelector('.close');
+const navbar = document.querySelector('nav');
+const ul_list = document.querySelector('.ul-list');
+
+
+// handling menus for responsiveness
+navbar.addEventListener('click', (e) => {
+    if(e.target.classList.contains('menu')){
+        menu.style.opacity = '0';
+        close.style.opacity = '1';
+        ul_list.style.transform = 'rotate(0deg)';
+    }
+    else if(e.target.classList.contains('close')){
+        close.style.opacity = '0';
+        menu.style.opacity = '1';
+        ul_list.style.transform = 'rotate(-90deg)';
+    }
+});
 
 
 // implementing dark and light theme
 theme_selector.addEventListener('click', (e) => {
-    console.log(e.target.innerText);
     if(e.target.innerText === 'Dark') {
         document.body.classList.add('dark');
         document.body.classList.remove('light');

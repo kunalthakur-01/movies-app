@@ -12,6 +12,7 @@ body {
     font-family: 'Poppins', sans-serif;
     position: relative;
     background-color: var(--primary-color);
+    overflow: hidden;
 }
 
 :root {
@@ -25,6 +26,7 @@ body {
     --dark-color: white;
     --light-color: black;
     --hover-color: white;
+    --list-items-color: white;
 }
 
  .dark {
@@ -38,6 +40,7 @@ body {
     --dark-color: white;
     --light-color: black;
     --hover-color: white;
+    --list-items-color: black;
 }
 
 .light {
@@ -51,6 +54,7 @@ body {
     --dark-color: black;
     --light-color: white;
     --input-color: black;
+    --list-items-color: white;
 }
 
 nav {
@@ -65,6 +69,16 @@ nav {
     left: 0;
     z-index: 2;
     color: var(--dark-color);
+}
+
+nav .menu {
+    display:  none;
+    color: var(--dark-color);
+    font-size: 30px;
+}
+
+nav .close {
+    display: none;
 }
 
 nav h2 {
@@ -121,6 +135,7 @@ nav ul ul li  {
     display: block;
     padding: 12px 10px;
     cursor: pointer;
+    color: var(--list-items-color);
     /* padding: 1rem; */
 }
 
@@ -271,4 +286,86 @@ nav input:focus {
 
 .error-section h2 {
     color: var(--dark-color);
+}
+
+@media screen and (max-width: 900px) {
+    nav ul {
+        width: 13rem;
+        height: 45vh;
+        background: linear-gradient(var(--secondary-color), rgba(0, 0, 0, 0.756));
+        /* background-color: var(--secondary-color); */
+        opacity: 0.9;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 100;
+        border-bottom-left-radius: 3rem;
+        transform: rotate(-90deg);
+        transform-origin: 100% 0;
+        transition: transform 0.8s;
+    }
+    
+    nav ul li {
+        padding: 15px 8px; 
+        display: block;
+    }
+    
+    nav ul li a{
+        margin: 2rem;
+        font-size: 17.8px;
+        transition: 0.6s;
+        color: var(--dark-color);
+    }
+
+    nav h2 {
+        font-size: 20px;
+    }
+
+    nav input {
+        margin-left: -25px;
+        padding: 9px 10px;
+        width: 10rem;
+    }
+
+    nav .menu {
+        display: block;
+        font-size: 28px;
+        color: var(--dark-color);
+        cursor: pointer;
+    }
+
+    nav .close {
+        display: block;
+        color: var(--light-color);
+        background-color: var(--dark-color);
+        font-size: 32px;
+        padding: 1px;
+        margin: 0.7rem;
+        cursor: pointer;
+    }
+
+    nav ul ul {
+        transform: rotate(0deg);
+        background:var(--secondary-color);
+        height: 30vh;
+        opacity: 1;
+    }
+
+    nav ul ul li  {
+        color: var(--dark-color);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    nav h2 {
+        font-size: 19px;
+    }
+
+
+    nav input {
+        margin-left: -25px;
+        padding: 7px 8px;
+        font-size: 13px;
+        width: 8rem;
+    }
 }
