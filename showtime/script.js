@@ -90,7 +90,7 @@ const renderMovie = (collection) => {
                 <img src="${IMG_PATH + data.poster_path}" alt="${data.title}">
              </a>
             <div class="info">
-                <h3>${data.title}</h3>
+                <h3>${data.title || data.name}</h3>
                 <span class="rating ${data.vote_average.toFixed(1) >= 8.0 ? 'green' : 'orange'}">${data.vote_average.toFixed(1)}</span>
             </div>
             <div class="overview">
