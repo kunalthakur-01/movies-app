@@ -87,9 +87,7 @@ const renderMovie = (collection) => {
     collection.results.map( data => {
         let html = `
         <div class="card">
-             <a href="${IMG_PATH + data.poster_path}">
                 <img src="${IMG_PATH + data.poster_path}" alt="${data.title}">
-             </a>
             <div class="info">
                 <h3>${data.title || data.name}</h3>
                 <span class="rating ${data.vote_average.toFixed(1) >= 8.0 ? 'green' : 'orange'}">${data.vote_average.toFixed(1)}</span>
