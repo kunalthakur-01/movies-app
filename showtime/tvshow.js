@@ -1,5 +1,5 @@
 
-const api_url = fetch('https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=11');
+const api_url = fetch('https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=10');
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 
 const movieContainer = document.querySelector('.movie-container');

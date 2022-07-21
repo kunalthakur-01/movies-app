@@ -49,11 +49,17 @@
 }
 
 body {
+    overflow-x: hidden;
+}
+
+.conatiner {
     width: 100%;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     position: relative;
     background-color: var(--primary-color);
-    overflow-x: hidden;
+    overflow: hidden;
+
 }
 
 nav {
@@ -128,7 +134,8 @@ nav ul ul {
     top: 1.9rem;
     background-color: var(--hover-background-color);
     padding: 0 1rem;
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
 }
 
 nav ul ul li  {
@@ -144,7 +151,8 @@ nav ul ul li:hover {
 }
 
 nav ul li a:hover ul {
-    visibility: visible;
+    /* visibility: visible; */
+    display: block;
 }
 
 
@@ -257,7 +265,7 @@ nav input:focus {
     padding: 2rem;
     transform: translateY(101%);
     transition: transform 0.3s ease-in;
-    z-index: 10;
+    z-index: 1;
 }
 
 .overview h2 {
@@ -289,24 +297,22 @@ nav input:focus {
 }
 
 @media screen and (max-width: 900px) {
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
 
     nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        /* right: -13rem; */
+        /* left: -100%; */
         width: 13rem;
         height: 45vh;
         background: linear-gradient(var(--secondary-color), rgba(0, 0, 0, 0.863));
         /* background-color: var(--secondary-color); */
         opacity: 0.9;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 100;
+        /* z-index: 100; */
         border-bottom-left-radius: 3rem;
         transform: rotate(-90deg);
-        transform-origin: 100% 0;
+        transform-origin: 100% 0%;
         transition: transform 0.8s;
     }
     
@@ -354,6 +360,7 @@ nav input:focus {
         background:var(--secondary-color);
         height: 30vh;
         opacity: 1;
+        margin-top: 0.5rem;
     }
 
     nav ul ul li  {
